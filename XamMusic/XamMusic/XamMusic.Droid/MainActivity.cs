@@ -1,17 +1,12 @@
-﻿using System;
-
+﻿
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
+using Android.Graphics;
+using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Android.Widget;
-using Android.OS;
-using Android.Content;
 using XamMusic.Droid.Audio;
-using FFImageLoading.Forms.Droid;
-using Android.Graphics;
-using DLToolkit.Forms.Controls;
-using Android.Graphics.Drawables;
 
 namespace XamMusic.Droid
 {

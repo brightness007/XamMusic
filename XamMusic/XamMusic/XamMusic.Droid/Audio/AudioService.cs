@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
+using Android.Media;
 using Android.OS;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.Media;
-using XamMusic.Models;
-using System.Threading.Tasks;
-using System.Threading;
-using System.Collections.ObjectModel;
-using XamMusic.Helpers;
-using Android.Support.V4.Media.Session;
-using XamMusic.Droid.BroadcastRecievers;
-using Android.Support.V4.Media;
-using Android.Support.V7.App;
-using static Android.Support.V7.App.NotificationCompat;
 using Android.Support.V4.App;
-using Android.Graphics;
+using Android.Support.V4.Media;
+using Android.Support.V4.Media.Session;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using XamMusic.Droid.BroadcastRecievers;
+using XamMusic.Helpers;
+using XamMusic.Models;
+using static Android.Support.V4.Media.App.NotificationCompat;
 
 namespace XamMusic.Droid.Audio
 {
@@ -331,7 +326,7 @@ namespace XamMusic.Droid.Audio
                 audioServiceIntent.SetAction(ActionStop);
                 PendingIntent pendingCancelIntent = PendingIntent.GetService(ApplicationContext, 1, audioServiceIntent, PendingIntentFlags.CancelCurrent);
 
-                Android.Support.V4.App.NotificationCompat.Builder builder = new Builder(ApplicationContext)
+                Android.Support.V4.App.NotificationCompat.Builder builder = new NotificationCompat.Builder(ApplicationContext)
                     .SetContentTitle(currentSong.Title)
                     .SetContentText(currentSong.Artist)
                     .SetContentInfo(currentSong.Album)

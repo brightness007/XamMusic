@@ -1,11 +1,5 @@
 ﻿using FFImageLoading.Forms;
-using MediaPlayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace XamMusic.Controls
@@ -34,6 +28,7 @@ namespace XamMusic.Controls
                     System.Diagnostics.Debug.WriteLine("Artwork = " + Artwork);
                     if (!string.IsNullOrEmpty(Artwork?.ToString()) && !Artwork.ToString().Equals("False"))
                     {
+                        /*
                         if (Device.RuntimePlatform == Device.iOS)
                         {
                             double width = WidthRequest, height = HeightRequest;
@@ -51,6 +46,7 @@ namespace XamMusic.Controls
                         {
                             Source = ImageSource.FromFile(Artwork.ToString());
                         }
+                        */
                     }
                     else
                     {

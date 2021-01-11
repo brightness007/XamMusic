@@ -16,6 +16,11 @@ using XamMusic.Droid;
 using Android.Provider;
 using Android.Database;
 using System.Collections.ObjectModel;
+using Android.Support.V4.Content;
+using Android;
+using Android.Content.PM;
+using Android.Support.V4.App;
+using Plugin.CurrentActivity;
 
 [assembly: Dependency(typeof(PlaylistManagerDroid))]
 namespace XamMusic.Droid
@@ -182,6 +187,16 @@ namespace XamMusic.Droid
 
         public IList<Playlist> GetPlaylists()
         {
+            var context = CrossCurrentActivity.Current.AppContext;
+            var activity = CrossCurrentActivity.Current.Activity;
+            if (ContextCompat.CheckSelfPermission(context, Manifest.Permission.ReadExternalStorage) != (int)Permission.Granted)
+            {
+                ActivityCompat.RequestPermissions(activity, new String[] { Manifest.Permission.ReadExternalStorage }, 1);
+            }
+            else
+            {
+            }
+
             IList<Playlist> playlists = new ObservableCollection<Playlist>();
 
             ICursor playlistCursor = Android.App.Application.Context.ContentResolver.Query(

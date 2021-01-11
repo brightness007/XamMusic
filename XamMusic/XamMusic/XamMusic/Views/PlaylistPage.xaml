@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:XamMusic.Controls;assembly=XamMusic"
              x:Class="XamMusic.Views.PlaylistPage"
-             x:Name="PlaylistPage"
+             x:Name="PlaylistPage1"
              Title="{Binding Title}"
              BackgroundColor="#2f3037">
     <ContentPage.ToolbarItems>
@@ -22,8 +22,8 @@
                   BackgroundColor="#2f3037"
                   SeparatorColor="Gray">
             <ListView.Header>
-                <StackLayout Orientation="Horizontal" BindingContext="{Binding Source={x:Reference PlaylistPage}, Path=BindingContext}">
-                    <Label BindingContext="{Binding Source={x:Reference PlaylistPage}, Path=BindingContext}"
+                <StackLayout Orientation="Horizontal" BindingContext="{Binding Source={x:Reference PlaylistPage1}, Path=BindingContext}">
+                    <Label BindingContext="{Binding Source={x:Reference PlaylistPage1}, Path=BindingContext}"
                            Text="{Binding CountText}" HorizontalOptions="StartAndExpand"
                            FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center"
                            VerticalOptions="Center" VerticalTextAlignment="Center"

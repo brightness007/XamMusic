@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-
-using Android.Content.PM;
-using XamMusic.Droid.Audio;
-using FFImageLoading.Forms.Droid;
-using Android.Graphics;
 using DLToolkit.Forms.Controls;
-using Android.Graphics.Drawables;
+using FFImageLoading.Forms.Platform;
+using Plugin.CurrentActivity;
 
 namespace XamMusic.Droid
 {
@@ -27,7 +16,10 @@ namespace XamMusic.Droid
             base.OnCreate(bundle);
 
             // FFImageLoading
-            CachedImageRenderer.Init();
+            CachedImageRenderer.Init(true);
+
+            CrossCurrentActivity.Current.Init(this, bundle);
+            Rg.Plugins.Popup.Popup.Init(this);
 
             //// AudioService setup
             //AudioServiceIntent = new Intent(Droid.Audio.AudioService.ActionStart);

@@ -2,7 +2,6 @@
 <ContentView 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
     xmlns:controls="clr-namespace:XamMusic.Controls;assembly=XamMusic"
     xmlns:effects="clr-namespace:XamMusic.Effects"
     x:Class="XamMusic.Controls.MusicBarControl"
@@ -14,8 +13,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>-->
             
-            <cv:CarouselView x:Name="Carousel" ItemsSource="{Binding Queue}" Margin="0,0,0,0" Position="{Binding QueuePos, Mode=TwoWay}">
-                <cv:CarouselView.ItemTemplate>
+            <CarouselView x:Name="Carousel" ItemsSource="{Binding Queue}" Margin="0,0,0,0" Position="{Binding QueuePos, Mode=TwoWay}">
+                <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Grid BackgroundColor="Black" Margin="0,0,0,0" Padding="0,0,0,0" ColumnSpacing="6" RowSpacing="0">
                             <Grid.RowDefinitions>
@@ -53,8 +52,8 @@
                             </Image>-->
                         </Grid>
                     </DataTemplate>
-                </cv:CarouselView.ItemTemplate>
-            </cv:CarouselView>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
         </Grid>
     </ContentView.Content>
 </ContentView>
